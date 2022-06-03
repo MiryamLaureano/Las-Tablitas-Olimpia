@@ -1,0 +1,172 @@
+<html>
+	<head>
+		<title>Smell & Taste</title>
+		<meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="autor" />
+        <meta name="description" content="descripción página" />
+        <meta name="robots" content="index,follow" />
+		
+		<style>
+			ul,ol{list-style:none}
+			h1,h2,h3,h4,h5,h6,pre,code{font-size:1em;}
+			ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset{
+			margin:0;padding:0;line-height:1; list-style:none;}
+			a img,:link img,:visited img, fieldset{border:none;}
+			input[type=submit], input[type=reset], input[type=button] { *filter:chroma(color=#000000); }
+
+			body {  font-family: Arial; ; font-size:17px; color:#000000; background-color:#c2bbbba6; }
+			h1 {text-align: center; font-family:Arial; font-size:25px; margin-bottom:20px; margin-top: 20px; font-weight:bold; line-height: 140%; }
+			h2 { font-family:Arial; font-size:20px; margin-top: 20px; margin-bottom:20px; line-height: 140%; }
+			h3 { font-family:Arial; font-size:18px; margin-bottom:10px; line-height: 140%; }
+			p { margin-bottom:20px; text-align: justify; line-height: 140%; }
+			
+			
+			strong {  font-size:22px; font-weight:bold; color:#e71111; }
+			a { font-weight: bold; color:#236881; }
+			a:hover { color:#ec1010d0; margin-bottom:50px; font-weight: bold; }
+			
+			hr { clear:both; height:0; line-height:0; margin:0; padding:0; border:0; filter:alpha(opacity=0); }
+
+			div.header { position:fixed; left:0; top:0; right:0; height: 200px; background-color:#ffffff; }
+	
+			div.menu { position:fixed; left:0; top:150px; right:0; height:40px; text-align:center;  background-color:#40a7cc; }
+				div.menu ul { padding-top:10px;  }
+ 					div.menu ul li { display:inline-block; margin-right:50px; }
+					 div.menu ul li a { font-weight: bold; text-decoration:none; background-color:transparent; }
+					 div.menu ul li a:hover { color:#ffffff }
+	
+					 div.wrapper {  margin: 120px;  padding:80px; background-color:#ffffff;  }
+			.logo img { position:fixed;  width: 700px; left: 180 }
+			.plato img { position: fixed; width: 230px; right: 270; top: 10px; height: 130;}
+		
+			.foto-local img {width: 100px}
+			
+			.titulo {position: fixed; left: 20px; top: 40px; font-family: Verdana; text-align:center; font-size: 20px; font-weight:bold;   color:#1f1c1cfd; border-radius: 80px;   width:180px; padding:20px;   background-color:#1098c2d0; }
+			.more-info { font-size:18px; }
+
+		</style>
+		 
+		 <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
+		 <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
+		 <style>
+       		 body {
+            margin: 90;
+            padding: 20;
+       		 }
+        
+       		 #map {
+            position: relative;
+            top: 80;
+            bottom:0;
+            width: 100%;
+            height: 100%
+       	}
+    	</style>
+		<script>
+		function init() {
+			mapboxgl.accessToken =
+				'pk.eyJ1IjoibWlyeWFtbGF1cmVhbm8iLCJhIjoiY2t5aXhjZTIyMDFreTJ1dWY1MGFpYWl1ZCJ9.rWVNtAiXFnk50QgVRuUQOA';
+			var map = new mapboxgl.Map({
+				container: 'map',
+				style: 'mapbox://styles/miryamlaureano/ckyiy0fgb4kxa15pwyuwzw1t6',
+				center: [-77.0321, -12.0774],
+				zoom: 14,
+               	attributionControl: false,
+				hash: true
+			});
+        
+			var marker = new mapboxgl.Marker()
+            .setLngLat([-77.0321, -12.0774])
+            .setPopup(new mapboxgl.Popup().setHTML('<h3>Las Tablitas de Doña Olimpia, Jr. Carlos Arrieta 1300. Fono: 947154529. <p class="foto-local"> <img class=foto-local src="logo las tablitas.png"></p></h3>'))
+            .addTo(map);
+
+			var marker = new mapboxgl.Marker()
+            .setLngLat([-77.0308, -12.0802])
+            .setPopup(new mapboxgl.Popup().setHTML('<h3>Antilucho,  Jr. Carlos Arrieta 1300. Fono: 947154529. <p class="foto-local"> <img class=foto-local src="logo las tablitas.png"></p></h3>'))
+            .addTo(map);
+
+			var marker = new mapboxgl.Marker()
+            .setLngLat([-77.028, -12.082])
+            .setPopup(new mapboxgl.Popup().setHTML('<h3>Anticuchos del Tio Hugo.  Jr. Carlos Arrieta 1300. Fono: 947154529. <p class="foto-local"> <img class=foto-local src="logo las tablitas.png"></p></h3>'))
+            .addTo(map);
+   
+			var marker = new mapboxgl.Marker()
+            .setLngLat([-77.025, -12.0795])
+            .setPopup(new mapboxgl.Popup().setHTML('<h3>Archi Pancitas, Jr. Carlos Arrieta 1300. Fono: 947154529. <p class="foto-local"> <img class=foto-local src="logo las tablitas.png"></p></h3>'))
+            .addTo(map);
+     
+			var marker = new mapboxgl.Marker()
+            .setLngLat([-77.033, -12.083])
+            .setPopup(new mapboxgl.Popup().setHTML('<h3>Chios Chicken, Jr. Carlos Arrieta 1300. Fono: 947154529. <p class="foto-local"> <img class=foto-local src="logo las tablitas.png"></p></h3>'))
+            .addTo(map);
+
+			var marker = new mapboxgl.Marker()
+            .setLngLat([-77.041, -12.0802])
+            .setPopup(new mapboxgl.Popup().setHTML('<h3>Rokys, Jr. Carlos Arrieta 1300. Fono: 947154529. <p class="foto-local"> <img class=foto-local src="logo las tablitas.png"></p></h3>'))
+            .addTo(map);
+
+			var marker = new mapboxgl.Marker()
+            .setLngLat([-77.042, -12.083])
+            .setPopup(new mapboxgl.Popup().setHTML('<h3>Alberto y Elodia,  Jr. Carlos Arrieta 1300. Fono: 947154529. <p class="foto-local"> <img class=foto-local src="logo las tablitas.png"></p></h3>'))
+            .addTo(map);
+
+			var marker = new mapboxgl.Marker()
+            .setLngLat([-77.038, -12.0805])
+            .setPopup(new mapboxgl.Popup().setHTML('<h3>La Norteña,  Jr. Carlos Arrieta 1300. Fono: 947154529. <p class="foto-local"> <img class=foto-local src="logo las tablitas.png"></p></h3>'))
+            .addTo(map);
+
+			var marker = new mapboxgl.Marker()
+            .setLngLat([-77.0362, -12.0815])
+            .setPopup(new mapboxgl.Popup().setHTML('<h3>Caldo de Gallina el Buen Sabor,  Jr. Carlos Arrieta 1300. Fono: 947154529. <p class="foto-local"> <img class=foto-local src="logo las tablitas.png"></p></h3>'))
+            .addTo(map);
+
+			var marker = new mapboxgl.Marker()
+            .setLngLat([-77.0341, -12.0745])
+            .setPopup(new mapboxgl.Popup().setHTML('<h3>Pollos y Parrillas el Parque,  Jr. Carlos Arrieta 1300. Fono: 947154529. <p class="foto-local"> <img class=foto-local src="logo las tablitas.png"></p></h3>'))
+            .addTo(map);
+
+			var marker = new mapboxgl.Marker()
+            .setLngLat([-77.0319, -12.071])
+            .setPopup(new mapboxgl.Popup().setHTML('<h3>La Tribuna Carbonera,  Jr. Carlos Arrieta 1300. Fono: 947154529. <p class="foto-local"> <img class=foto-local src="logo las tablitas.png"></p></h3>'))
+            .addTo(map);
+
+			var marker = new mapboxgl.Marker()
+            .setLngLat([-77.042, -12.072])
+            .setPopup(new mapboxgl.Popup().setHTML('<h3>Pardos Chicken Braseria,  Jr. Carlos Arrieta 1300. Fono: 947154529. <p class="foto-local"> <img class=foto-local src="logo las tablitas.png"></p></h3>'))
+            .addTo(map);
+
+		}
+	</script>
+
+	</head>
+	
+    <body>
+    <div class="header">
+        <p class="logo"><img src="LOGO2.png" /></p>
+        <p class="plato"><img src="plato anticucho.jpg" /></p>
+    </div>
+    
+    <div class="menu">
+        <ul>
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="destacados.html">Destacados</a></li>
+            <li><a href="mapaweb.html">Anticucherias que tengo cerca</a></li>
+			
+        </ul>
+    </div>
+	
+	<p  class="titulo">Anticucherias que tengo cerca</p>
+		
+	
+
+</body>
+	
+	
+	<body onload="init()">
+		<div id="map"></div>
+	</body>
+
+ 
+
+</html>
